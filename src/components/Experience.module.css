@@ -1,0 +1,81 @@
+.section {
+  background: linear-gradient(180deg, transparent, rgba(0, 240, 255, 0.015), transparent);
+}
+
+.timeline { position: relative; }
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(180deg, var(--cyan), var(--purple), rgba(255,45,120,0.3), transparent);
+}
+
+.item { padding-left: 3rem; margin-bottom: 3.5rem; position: relative; }
+
+.dot {
+  position: absolute;
+  left: -6px;
+  top: 8px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  border: 2px solid var(--bg);
+}
+
+.card {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s;
+}
+
+.card:hover {
+  border-color: rgba(0, 240, 255, 0.35);
+  box-shadow: 0 0 40px rgba(0, 240, 255, 0.07);
+  transform: translateX(6px);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.role { font-size: 1.1rem; font-weight: 700; color: #fff; }
+
+.period {
+  font-size: 0.75rem;
+  color: var(--cyan);
+  background: rgba(0, 240, 255, 0.08);
+  padding: 0.3rem 0.85rem;
+  border-radius: 100px;
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  white-space: nowrap;
+}
+
+.company { color: var(--text-dim); font-size: 0.88rem; margin-bottom: 1.2rem; }
+
+.points { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+.points li {
+  font-size: 0.88rem;
+  color: var(--text);
+  padding-left: 1.3rem;
+  position: relative;
+  line-height: 1.65;
+}
+.points li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--cyan);
+  font-size: 0.7rem;
+  top: 3px;
+}

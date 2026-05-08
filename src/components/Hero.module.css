@@ -1,0 +1,122 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 8rem 4rem 4rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.glow {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(0, 240, 255, 0.07) 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  animation: pulse 4s ease-in-out infinite;
+}
+
+.glow2 {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(180, 79, 255, 0.06) 0%, transparent 70%);
+  top: 25%;
+  left: 20%;
+  pointer-events: none;
+  animation: pulse 6s ease-in-out infinite reverse;
+}
+
+.content { position: relative; z-index: 1; }
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 1.2rem;
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  border-radius: 100px;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 2rem;
+  background: rgba(0, 240, 255, 0.05);
+}
+
+.badge::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  background: var(--cyan);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--cyan);
+  animation: blink-dot 1.5s infinite;
+}
+
+.name {
+  font-size: clamp(3.5rem, 10vw, 7.5rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -4px;
+  margin-bottom: 1.2rem;
+  color: #fff;
+}
+
+.name span {
+  background: linear-gradient(135deg, var(--cyan), var(--purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.typewriter {
+  font-size: 1.15rem;
+  color: var(--text-dim);
+  margin-bottom: 3rem;
+  min-height: 2rem;
+}
+
+.typewriterText {
+  color: var(--cyan);
+  border-right: 2px solid var(--cyan);
+  animation: blink-cursor 0.7s infinite;
+}
+
+.btns {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.scrollIndicator {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-dim);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.scrollLine {
+  width: 1px;
+  height: 55px;
+  background: linear-gradient(var(--cyan), transparent);
+  animation: scrollAnim 2s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+  .hero { padding: 7rem 1.5rem 4rem; }
+}

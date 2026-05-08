@@ -1,0 +1,27 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.2rem;
+}
+
+.card {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 14px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.card:hover {
+  border-color: rgba(0, 240, 255, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 0 30px rgba(0, 240, 255, 0.08);
+}
+
+.icon { font-size: 1.8rem; flex-shrink: 0; }
+.title { font-size: 0.9rem; font-weight: 600; color: #fff; margin-bottom: 0.35rem; line-height: 1.4; }
+.issuer { font-size: 0.73rem; color: var(--cyan); letter-spacing: 0.05em; }
